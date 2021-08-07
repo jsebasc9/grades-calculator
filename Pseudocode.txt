@@ -1,0 +1,14 @@
+Prompt user for number of assessments
+Prompt user for assessment names and values
+If sum of assessment values is not 100
+    Show error message
+Else
+    Prompt user for number of students
+    For each student
+        Prompt user for student name
+        
+        For each assessment
+            Prompt user for assessment mark
+            Calculate and display assessment grade
+        Calculate and display student's total mark and grade
+    Calculate and display class average and top student details
