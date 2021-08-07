@@ -1,5 +1,6 @@
 Prompt user for number of assessments
 Prompt user for assessment names and values
+
 If sum of assessment values is not 100
     Show error message
 Else
