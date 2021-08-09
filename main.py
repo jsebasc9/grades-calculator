@@ -1,4 +1,4 @@
-#Stargin STEP 4
+#Working in Task 5
 #Initialization of variables and lists
 import sys
 
