@@ -1,7 +1,6 @@
-#Working in Task 5
-#Initialization of variables and lists
-import sys
+#Working in Task 5.2
 
+#Initialization of variables and lists
 list_names = []
 list_values = []
 index = 0
