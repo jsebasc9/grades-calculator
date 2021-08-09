@@ -48,13 +48,14 @@ while True:
             #Restarting Index in the lists
             index = 0
             num_students = int(input('Type number of students : '))
+            #Starting students stage and calculation of grades
             while index < num_students:
                 name_student = input('Type name of student : ')
-                print('What did ', name_student, 'get out of', list_values[index], ' in the essay? : ')
-                mark = int(input())
-                calculategrade(mark, list_values[index])
-                index += 1
-
+                while index < len(list_values):
+                    print('What did ', name_student, 'get out of', list_values[index], ' in the ',list_names[index], '? : ')
+                    mark = int(input())
+                    calculategrade(mark, list_values[index])
+                    index += 1
         else:
             print('The assessment values dont sum up to 100, the program will finish')
             break
