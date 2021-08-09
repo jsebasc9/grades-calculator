@@ -8,6 +8,12 @@ num_assessments = int(input('Please type number of assessments: '))
 
 #Function to calculate Grades
 def calculategrade(mark, value):
+    #If the user enters a mark superior thank the assessment, it will change the mark to the maximum of the assessment.
+    if mark > value:
+        mark = value
+    #If the user enters a mark below 0, it will be set to 0
+    if mark < 0:
+        mark = 0
     if mark >= 80:
         grade = 'HD (High Distinction)'
     elif mark >= 70:
@@ -18,7 +24,7 @@ def calculategrade(mark, value):
         grade = 'P (Pass)'  
     else:
         grade = 'F (Fail)'
-    print(value, ' out of' , mark, 'is' , grade )
+    print(mark, ' out of' , value, 'is' , grade )
 
 
 while True:
@@ -49,12 +55,15 @@ while True:
             num_students = int(input('Type number of students : '))
             #Starting students stage and calculation of grades
             while index < num_students:
+                sub_index = 0
                 name_student = input('Type name of student : ')
-                while index < len(list_values):
-                    print('What did ', name_student, 'get out of', list_values[index], ' in the ',list_names[index], '? : ')
+                print(len(list_values))
+                while sub_index < len(list_values):
+                    print('What did ', name_student, 'get out of', list_values[sub_index], ' in the ',list_names[sub_index], '? : ')
                     mark = int(input())
                     calculategrade(mark, list_values[index])
-                    index += 1
+                    sub_index += 1
+                index += 1
         else:
             print('The assessment values dont sum up to 100, the program will finish')
             break
