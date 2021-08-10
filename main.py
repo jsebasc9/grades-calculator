@@ -4,11 +4,11 @@
 list_names = []
 list_values = []
 list_total_marks = []
-sub_index = 0
 num_students = 0
 
 #Function to calculate Grades
 def calculate_grade(mark):
+    
     if mark >= 80:
         grade = 'HD (High Distinction)'
     elif mark >= 70:
@@ -41,21 +41,22 @@ else:
     for student in range(num_students):
         name_student = input('Type name of student : ')
 
-        for sub_index in range(len(list_values)):
-            print('What did ', name_student, 'get out of', list_values[sub_index], ' in the ',list_names[sub_index], '? : ')
+        for value in range(len(list_values)):
+            print('What did ', name_student, 'get out of', list_values[value], ' in the ',list_names[value], '? : ')
             mark = int(input())
             #If the user enters a mark superior thank the assessment, it will change the mark to the maximum of the assessment.
-            if mark > list_values[sub_index]:
-                mark = list_values[sub_index]
+            if mark > list_values[value]:
+                mark = list_values[value]
             #If the user enters a mark below 0, it will be set to 0
             if mark < 0:
                 mark = 0
-            list_total_marks.append(mark)
-            grade = calculate_grade(mark)
-            print(mark, ' out of' , list_values[sub_index], 'is' , grade )
-            sub_index += 1
+            mark_converted = mark*100/list_values[value]
+            list_total_marks.append(mark_converted)
+            grade = calculate_grade(mark_converted)
+            print(mark, ' out of' , list_values[value], 'is' , grade )
+            value += 1
         total_mark = sum(list_total_marks)/len(list_total_marks)
         grade = calculate_grade(total_mark)
-        print(name_student, ' has a total mark of' , total_mark, '(' , grade, ')' )
+        print(name_student, ' has a total mark of' , int(total_mark), '(' , grade, ')' )
         list_total_marks.clear()
 
