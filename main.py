@@ -5,7 +5,7 @@ list_names = []
 list_values = []
 list_total_marks = []
 index = 0
-num_assessments = int(input('Please type number of assessments: '))
+
 
 #Function to calculate Grades
 def calculate_grade(mark):
@@ -22,8 +22,7 @@ def calculate_grade(mark):
 
     return grade
 
-        
-
+num_assessments = int(input('Please type number of assessments: '))
 
 while True:
     #Checking if the number of assessments is greater than 1, also, if the lists are not full
@@ -41,7 +40,7 @@ while True:
                 input_user = int(input('Please put value of assessment : '))
                 list_values.append(input_user)
                 index += 1
-            
+
         print(list_names)
         print(list_values)
     #If the list are full the program ends    
@@ -52,7 +51,7 @@ while True:
             index = 0
             num_students = int(input('Type number of students : '))
             #Starting students stage and calculation of grades
-            while index < num_students:
+            for index in range(num_students):
                 sub_index = 0
                 name_student = input('Type name of student : ')
                 print(len(list_values))
