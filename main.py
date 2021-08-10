@@ -3,17 +3,12 @@
 #Initialization of variables and lists
 list_names = []
 list_values = []
+list_total_marks = []
 index = 0
 num_assessments = int(input('Please type number of assessments: '))
 
 #Function to calculate Grades
-def calculategrade(mark, value):
-    #If the user enters a mark superior thank the assessment, it will change the mark to the maximum of the assessment.
-    if mark > value:
-        mark = value
-    #If the user enters a mark below 0, it will be set to 0
-    if mark < 0:
-        mark = 0
+def calculate_grade(mark):
     if mark >= 80:
         grade = 'HD (High Distinction)'
     elif mark >= 70:
@@ -21,10 +16,13 @@ def calculategrade(mark, value):
     elif mark >= 60:
         grade = 'CR (Credit)'
     elif mark >= 50:
-        grade = 'P (Pass)'  
+        grade = 'P (Pass)'
     else:
         grade = 'F (Fail)'
-    print(mark, ' out of' , value, 'is' , grade )
+
+    return grade
+
+        
 
 
 while True:
@@ -61,8 +59,20 @@ while True:
                 while sub_index < len(list_values):
                     print('What did ', name_student, 'get out of', list_values[sub_index], ' in the ',list_names[sub_index], '? : ')
                     mark = int(input())
-                    calculategrade(mark, list_values[index])
+                    #If the user enters a mark superior thank the assessment, it will change the mark to the maximum of the assessment.
+                    if mark > list_values[sub_index]:
+                        mark = list_values[sub_index]
+                    #If the user enters a mark below 0, it will be set to 0
+                    if mark < 0:
+                        mark = 0
+                    list_total_marks.append(mark)
+                    grade = calculate_grade(mark)
+                    print(mark, ' out of' , list_values[index], 'is' , grade )
                     sub_index += 1
+                print(list_total_marks)
+                total_mark = sum(list_total_marks)/len(list_total_marks)
+                grade = calculate_grade(total_mark)
+                print(name_student, ' has a total mark of' , total_mark, '(' , grade, ')' )
                 index += 1
         else:
             print('The assessment values dont sum up to 100, the program will finish')
