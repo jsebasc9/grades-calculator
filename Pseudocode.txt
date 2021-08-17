@@ -1,3 +1,20 @@
+#----------------------------------------------
+# Function Calculate grade
+
+if mark is greater or equal 80
+    Grade is High Distinction
+else if mark is greater or equal 70
+    Grade is Distinction
+else if mark is greater or equal 60
+    Grade is Credit
+else if mark is greater or equal 50
+    Grade is Pass
+else
+    Grade is Fail
+return the value of grade
+#----------------------------------------------
+# Main Code
+
 Prompt user for number of assessments
 While number of assessments are less than 1
     If number of assessments are less than 1
@@ -44,4 +61,4 @@ Else
     Display class average and top student details
 
 Promt user to press any key to end the program
-    
+#----------------------------------------------    
