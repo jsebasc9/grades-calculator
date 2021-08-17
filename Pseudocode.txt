@@ -1,15 +1,47 @@
 Prompt user for number of assessments
-Prompt user for assessment names and values
+While number of assessments are less than 1
+    If number of assessments are less than 1
+        Display Error
+
+For each assessment
+    Prompt user for assessment name
+    Append the assessment name to the list
+    While input of the user is less than 1
+        Prompt user for assessment value
+        If input of user is less than 1
+            Display error
+    Append the assessments value to the list
 
 If sum of assessment values is not 100
     Show error message
 Else
-    Prompt user for number of students
+    While number of students is less than 1
+        Prompt user for number of students
+        If input of user is less than 1
+            Display error
     For each student
         Prompt user for student name
-        
         For each assessment
             Prompt user for assessment mark
+            If assessment mark is greater than assessment value
+                Set mark to value of assessment
+            Else if asessment mark is less than 0
+                Set mark to 0
+            Convert mark appropertely using assessment value
+            Append mark to list of total marks student
             Calculate and display assessment grade
-        Calculate and display student's total mark and grade
-    Calculate and display class average and top student details
+        Calculate total mark of student
+        Call function to calculate and display grade of student
+        Append mark to list of total marks class
+        if total mark of student is greater than total class mark
+            set top student name
+            set student top class mark
+        clear list of total mark sudent to use in the next iteration
+
+    Display message all Marks entered
+    Calculate class average mark
+    Call function to calculate grade of the class
+    Display class average and top student details
+
+Promt user to press any key to end the program
+    
