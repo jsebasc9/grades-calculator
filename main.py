@@ -38,7 +38,7 @@ while num_assessments < 1:
         print('Error : Number of assessment is less than 1')
 
 #Requesting name and value of assessments from the user       
-for assessment in range(num_assessments):
+for assessment in range(1, num_assessments + 1):
     print('Type name of assessment ', assessment, end=' : ')
     input_user_name = input()   
     list_names.append(input_user_name)
@@ -63,7 +63,7 @@ else:
             print('Error : Number of students is less than 1')
             
     #Starting students stage and calculation of grades
-    for student in range(num_students):
+    for student in range(1, num_students + 1):
         #Requesting name of student to append in the list
         print('\nType name of student', student, end=' : ')
         name_student = input()
@@ -89,7 +89,7 @@ else:
         grade = calculate_grade(total_mark)
         print(name_student, ' has a total mark of' , int(total_mark), '(' , grade, ')' )
         list_total_marks_class.append(total_mark)
-        #Checking an dlooking for the top student and setting name with mark
+        #Checking and looking for the top student and setting name with mark
         if total_mark > top_class_mark:
             top_student_name = name_student
             top_class_mark = total_mark
@@ -103,3 +103,4 @@ else:
     print('The class average is' , grade )
     print('The top student is ', top_student_name, 'with a total mark of ', int(top_class_mark))
 
+end = input('Press any key to end the program . . .')
