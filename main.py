@@ -25,17 +25,14 @@ def calculate_grade(mark):
         grade = 'F (Fail)'
     return grade
 
-# while num_assessments < 1:
-#     try:
-#         num_assessments = int(input('Please type number of assessments: '))
-#     except:
-#         print('Error : Something went wrong, try again . . .')
-
 #Requesting number of assessments from the user
 while num_assessments < 1:
-    num_assessments = int(input('Please type number of assessments: '))
-    if num_assessments < 1:
-        print('Error : Number of assessment is less than 1')
+    try:
+        num_assessments = int(input('Please type number of assessments: '))
+        if num_assessments < 1:
+                print('Error : Number of assessment is less than 1, try again . . .')
+    except ValueError:
+            print('Error : Something went wrong, try again . . .')
 
 #Requesting name and value of assessments from the user       
 for assessment in range(1, num_assessments + 1):
