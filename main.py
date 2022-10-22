@@ -1,4 +1,3 @@
-
 #Initialization of variables and lists
 list_names = []
 list_values = []
