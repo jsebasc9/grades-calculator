@@ -8,4 +8,4 @@ main.py: Use an command line interface allow the users inputs to specify certain
 
 
 This program include pseudocode and flowchart
-It was implemented with different programming concepts, including data types, control strcutures with cycles and conditional statmens for programming principles.
+It was implemented with different programming concepts, including data types, control structures with cycles and conditional statmens for programming principles.
