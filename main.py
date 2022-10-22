@@ -1,6 +1,3 @@
-#Step 6 Completed. Juan Sebastian Calderon Cordoba 10551059 
-#Assignment 1: Individual programming assignment (“Student Grades” program)
-
 #Initialization of variables and lists
 list_names = []
 list_values = []
